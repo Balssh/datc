@@ -23,7 +23,7 @@ app = FastAPI()
 # Home endpoint
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "DATC project"}
 
 
 # List all entities in table
