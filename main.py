@@ -16,7 +16,7 @@ access_key = os.getenv("TABLES_PRIMARY_STORAGE_ACCOUNT_KEY")
 endpoint_suffix = os.getenv("TABLES_STORAGE_ENDPOINT_SUFFIX")
 account_name = os.getenv("TABLES_STORAGE_ACCOUNT_NAME")
 connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={access_key};EndpointSuffix={endpoint_suffix}"
-
+table_name = "players"
 # The principal thing in this application
 app = FastAPI()
 
