@@ -10,7 +10,6 @@ import uvicorn
 from player import Player
 
 # Global variables
-
 port = int(os.getenv("PORT"))
 access_key = os.getenv("TABLES_PRIMARY_STORAGE_ACCOUNT_KEY")
 endpoint_suffix = os.getenv("TABLES_STORAGE_ENDPOINT_SUFFIX")
