@@ -3,14 +3,19 @@ from select import select
 from azure.core.exceptions import HttpResponseError, ResourceExistsError
 from azure.data.tables.aio import TableClient
 from fastapi import FastAPI
+import os
+import uvicorn
 
 # Personal modules
 from player import Player
 
 # Global variables
-# connection_string - ideally would be hashed but for convenience it's in plain text here
-connection_string = "DefaultEndpointsProtocol=https;AccountName=datcapi;AccountKey=r2mGYgXkTDo+0ibMCC4lwkUEHOlkY0bb+fS+cn9ar6uDiS6/EbCgG9zO0ow+WhMl9nsmFX9j0MoR+AStE4fkPg==;EndpointSuffix=core.windows.net"
-table_name = "players"
+
+port = int(os.getenv("PORT"))
+access_key = os.getenv("TABLES_PRIMARY_STORAGE_ACCOUNT_KEY")
+endpoint_suffix = os.getenv("TABLES_STORAGE_ENDPOINT_SUFFIX")
+account_name = os.getenv("TABLES_STORAGE_ACCOUNT_NAME")
+connection_string = f"DefaultEndpointsProtocol=https;AccountName={account_name};AccountKey={access_key};EndpointSuffix={endpoint_suffix}"
 
 # The principal thing in this application
 app = FastAPI()
@@ -152,3 +157,7 @@ async def delete_player(player_ign: str, team_name: str):
             pass
 
     return await display_players()
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
