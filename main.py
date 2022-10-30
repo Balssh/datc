@@ -5,7 +5,7 @@ from azure.data.tables.aio import TableClient
 from fastapi import FastAPI
 
 # Personal modules
-from app.player import Player
+from player import Player
 
 # Global variables
 # connection_string - ideally would be hashed but for convenience it's in plain text here
