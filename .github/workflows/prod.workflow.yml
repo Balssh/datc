@@ -40,7 +40,6 @@ jobs:
       with:
         app-name: 'lolplayers'
         images: 'dockerdatc.azurecr.io/datcapi:${{ github.sha }}'
-        slot-name: 'staging'
 
 
     - name: Azure logout
