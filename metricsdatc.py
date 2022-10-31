@@ -4,7 +4,7 @@ from azure.data.tables.aio import TableClient
 import pandas as pd
 from datetime import datetime
 
-connection_string = "DefaultEndpointsProtocol=https;AccountName=datcapi;AccountKey=r2mGYgXkTDo+0ibMCC4lwkUEHOlkY0bb+fS+cn9ar6uDiS6/EbCgG9zO0ow+WhMl9nsmFX9j0MoR+AStE4fkPg==;EndpointSuffix=core.windows.net"
+
 # table_name = "players"
 
 
